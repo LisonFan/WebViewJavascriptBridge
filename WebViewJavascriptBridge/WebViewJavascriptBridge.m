@@ -44,11 +44,7 @@
         return (WebViewJavascriptBridge*) [WKWebViewJavascriptBridge bridgeForWebView:webView];
     }
 #endif
-// NOTE: The following allows the old support for WebView (macOS 10.3-10.14 - now
-// deprecated), but not support UIWebView (iOS 2.0-12.0 - now deprecated).
-// We do NOT want to support UIWebView on iOS, as Apple is warning developers of
-// UIWebView API usage when submitting an app to the AppStore.  The thought is that
-// this will soon be an error with iOS uploads in our near future.
+
 #if defined WVJB_PLATFORM_OSX
     if ([webView isKindOfClass:[WVJB_WEBVIEW_TYPE class]]) {
         WebViewJavascriptBridge* bridge = [[self alloc] init];
